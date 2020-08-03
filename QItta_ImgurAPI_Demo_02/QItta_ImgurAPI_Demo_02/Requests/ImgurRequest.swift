@@ -65,8 +65,10 @@ public extension ImgurRequest {
 
         let decoder = JSONDecoder()
         if (200..<300).contains(urlResponse.statusCode) {
+            // JSONデータからモデルをインスタンス化
             return try decoder.decode(Response.self, from: data)
         } else {
+            // JSONデータからAPIエラーをインスタンス化
             throw try decoder.decode(ImgurAPIErrorResponse.self, from: data)
         }
     }

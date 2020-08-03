@@ -8,6 +8,7 @@
 
 import Foundation
 
+// エラーとして処理するため、ImgurBaseResponseと別実装にする必要がある
 public struct ImgurAPIErrorResponse : Decodable, Error {
     public var success: Bool
     public var status: Int
