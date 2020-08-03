@@ -25,7 +25,7 @@ extension GenerateAccessTokenResponse {
     }    
 }
 
-extension ImgurBaseResponse where Item == ImgurAPIError {
+extension ImgurAPIErrorResponse {
     static var exampleJSON: String {
         return """
         {

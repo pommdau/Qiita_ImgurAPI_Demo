@@ -12,18 +12,6 @@ import XCTest
 @testable import QItta_ImgurAPI_Demo_02
 
 class ImgurBaseResponseTests: XCTestCase {
-
-    func testDecodeImgurAPIError() throws {
-        let jsonDecoder = JSONDecoder()
-        let data = ImgurBaseResponse<ImgurAPIError>.exampleJSON.data(using: .utf8)!
-        let response = try jsonDecoder.decode(ImgurBaseResponse<ImgurAPIError>.self, from: data)
-        XCTAssertEqual(response.success,      false)
-        XCTAssertEqual(response.status,       400)
-        XCTAssertEqual(response.data.error,   "Invalid refresh token")
-        XCTAssertEqual(response.data.request, "/oauth2/token")
-        XCTAssertEqual(response.data.method,  "POST")
-    }
-    
     func testDecodeImage() throws {
         let jsonDecoder = JSONDecoder()
         let data = ImgurBaseResponse<Image>.exampleJSON.data(using: .utf8)!

@@ -16,6 +16,6 @@ public enum ImgurClientError : Error {
     case responseParseError(Error)
     
     // APIからエラーレスポンスを受け取った
-    case apiError(ImgurBaseResponse<ImgurAPIError>)
+    case apiError(ImgurAPIErrorResponse)
     
 }
