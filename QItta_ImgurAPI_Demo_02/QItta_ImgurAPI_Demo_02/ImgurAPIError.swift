@@ -9,7 +9,7 @@
 import Foundation
 
 public struct ImgurAPIError : Decodable, Error {
-    public var error   : String
-    public var request : String
-    public var method  : String
+    public var error   : String  // エラーの詳細 e.g. "Invalid grant_type parameter or parameter missing"
+    public var request : String  // リクエストへの相対パス e.g. "/oauth2/token"
+    public var method  : String  // メソッド e.g. "POST"
 }

@@ -35,6 +35,5 @@ class ImgurBaseResponseTests: XCTestCase {
         XCTAssertEqual(response.data.animated,      false)
         XCTAssertEqual(response.data.deletehash,    "HWl7S48dF4Y2Q3r")
         XCTAssertEqual(response.data.link,          "https://i.imgur.com/RsWSMHF.png")
-        
     }
 }
