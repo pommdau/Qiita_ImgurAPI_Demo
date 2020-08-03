@@ -24,6 +24,9 @@
 		D0C0A13524D8585400E0D604 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13424D8585400E0D604 /* HTTPMethod.swift */; };
 		D0C0A13724D8593E00E0D604 /* ImgurAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13624D8593E00E0D604 /* ImgurAPI.swift */; };
 		D0C0A13924D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13824D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift */; };
+		D0C0A13D24D865F800E0D604 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13C24D865F800E0D604 /* HTTPClient.swift */; };
+		D0C0A14024D8661700E0D604 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13F24D8661700E0D604 /* ImgurClient.swift */; };
+		D0C0A14324D8687500E0D604 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		D0C0A13424D8585400E0D604 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		D0C0A13624D8593E00E0D604 /* ImgurAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPI.swift; sourceTree = "<group>"; };
 		D0C0A13824D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPIErrorResponseTests.swift; sourceTree = "<group>"; };
+		D0C0A13C24D865F800E0D604 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D0C0A13F24D8661700E0D604 /* ImgurClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurClient.swift; sourceTree = "<group>"; };
+		D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHTTPClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,7 @@
 				D0C0A10224D842F000E0D604 /* ViewController.swift */,
 				D0C0A13B24D8651C00E0D604 /* Models */,
 				D0C0A13A24D8650400E0D604 /* Requests */,
+				D0C0A13E24D8660000E0D604 /* Clients */,
 				D0C0A10424D842F500E0D604 /* Assets.xcassets */,
 				D0C0A10624D842F500E0D604 /* Main.storyboard */,
 				D0C0A10924D842F500E0D604 /* Info.plist */,
@@ -145,6 +152,16 @@
 				D0C0A13024D8573E00E0D604 /* ImgurClientError.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D0C0A13E24D8660000E0D604 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				D0C0A13C24D865F800E0D604 /* HTTPClient.swift */,
+				D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */,
+				D0C0A13F24D8661700E0D604 /* ImgurClient.swift */,
+			);
+			path = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,11 +265,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C0A10324D842F000E0D604 /* ViewController.swift in Sources */,
+				D0C0A14324D8687500E0D604 /* StubHTTPClient.swift in Sources */,
 				D0C0A13724D8593E00E0D604 /* ImgurAPI.swift in Sources */,
 				D0C0A13124D8573E00E0D604 /* ImgurClientError.swift in Sources */,
 				D0C0A13324D8582000E0D604 /* ImgurRequest.swift in Sources */,
 				D0C0A10124D842F000E0D604 /* AppDelegate.swift in Sources */,
 				D0C0A12F24D848F700E0D604 /* Image.swift in Sources */,
+				D0C0A13D24D865F800E0D604 /* HTTPClient.swift in Sources */,
+				D0C0A14024D8661700E0D604 /* ImgurClient.swift in Sources */,
 				D0C0A13524D8585400E0D604 /* HTTPMethod.swift in Sources */,
 				D0C0A12B24D8472100E0D604 /* ImgurAPIErrorResponse.swift in Sources */,
 				D0C0A11F24D843BD00E0D604 /* ImgurBaseResponse.swift in Sources */,
