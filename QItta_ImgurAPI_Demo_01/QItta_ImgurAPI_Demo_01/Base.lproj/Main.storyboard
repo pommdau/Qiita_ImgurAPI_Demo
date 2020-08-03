@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="QItta_ImgurAPI_Demo_01" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -693,7 +694,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="Krd-j2-Aa6" kind="relationship" relationship="window.shadowedContentViewController" id="zOt-bb-XF1"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -701,17 +702,60 @@
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="7V9-lW-F8Q">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController id="Krd-j2-Aa6" customClass="ViewController" customModule="ImgurAPIDemo_02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="qWI-3E-8RB">
+                        <rect key="frame" x="0.0" y="0.0" width="313" height="127"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0PJ-hy-s2G">
+                                <rect key="frame" x="14" y="79" width="285" height="32"/>
+                                <buttonCell key="cell" type="push" title="Authorize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aEy-k1-LIp">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="authorizeButtonClicked:" target="Krd-j2-Aa6" id="9y7-WJ-06S"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uyf-H7-V1a">
+                                <rect key="frame" x="14" y="13" width="285" height="32"/>
+                                <buttonCell key="cell" type="push" title="Upload Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bjK-44-Sau">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="uploadImageButtonClicked:" target="Krd-j2-Aa6" id="wiy-xK-Yon"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Kq1-F1-6Db">
+                                <rect key="frame" x="14" y="46" width="285" height="32"/>
+                                <buttonCell key="cell" type="push" title="Update AccessToken" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Lr3-Ok-dIe">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="updateAccessTokenButtonClicked:" target="Krd-j2-Aa6" id="L0j-6L-9G8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0PJ-hy-s2G" firstAttribute="leading" secondItem="qWI-3E-8RB" secondAttribute="leading" constant="20" id="3vm-sv-8Kn"/>
+                            <constraint firstItem="Kq1-F1-6Db" firstAttribute="leading" secondItem="qWI-3E-8RB" secondAttribute="leading" constant="20" id="7id-CV-r3w"/>
+                            <constraint firstItem="Kq1-F1-6Db" firstAttribute="top" secondItem="0PJ-hy-s2G" secondAttribute="bottom" constant="12" id="FF4-Ma-5Sf"/>
+                            <constraint firstItem="0PJ-hy-s2G" firstAttribute="top" secondItem="qWI-3E-8RB" secondAttribute="top" constant="20" id="J2x-Yg-5gY"/>
+                            <constraint firstItem="uyf-H7-V1a" firstAttribute="top" secondItem="Kq1-F1-6Db" secondAttribute="bottom" constant="12" id="NGQ-QX-Lkf"/>
+                            <constraint firstAttribute="trailing" secondItem="Kq1-F1-6Db" secondAttribute="trailing" constant="20" id="NUd-Ya-ekh"/>
+                            <constraint firstAttribute="trailing" secondItem="0PJ-hy-s2G" secondAttribute="trailing" constant="20" id="PAf-Ru-hZc"/>
+                            <constraint firstItem="uyf-H7-V1a" firstAttribute="leading" secondItem="qWI-3E-8RB" secondAttribute="leading" constant="20" id="nX5-kp-u6O"/>
+                            <constraint firstAttribute="trailing" secondItem="uyf-H7-V1a" secondAttribute="trailing" constant="20" id="tgZ-4H-xDX"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="qoN-Ia-E9w" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="24.5" y="598.5"/>
         </scene>
     </scenes>
 </document>
