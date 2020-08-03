@@ -24,3 +24,20 @@ extension GenerateAccessTokenResponse {
         """
     }    
 }
+
+extension ImgurBaseResponse where Item == ImgurAPIError {
+    static var exampleJSON: String {
+        return """
+        {
+            "data": {
+                "error": "Invalid refresh token",
+                "request": "/oauth2/token",
+                "method": "POST"
+            },
+            "success": false,
+            "status": 400
+        }
+        """
+    }
+    
+}
