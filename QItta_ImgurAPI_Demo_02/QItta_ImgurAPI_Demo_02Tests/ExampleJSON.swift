@@ -39,5 +39,46 @@ extension ImgurBaseResponse where Item == ImgurAPIError {
         }
         """
     }
-    
 }
+
+extension ImgurBaseResponse where Item == Image {
+    static var exampleJSON: String {
+        return """
+        {
+            "data": {
+                "id": "RsWSMHF",
+                "title": null,
+                "description": null,
+                "datetime": 1596455626,
+                "type": "image/png",
+                "animated": false,
+                "width": 468,
+                "height": 308,
+                "size": 28985,
+                "views": 0,
+                "bandwidth": 0,
+                "vote": null,
+                "favorite": false,
+                "nsfw": null,
+                "section": null,
+                "account_url": null,
+                "account_id": 104356397,
+                "is_ad": false,
+                "in_most_viral": false,
+                "has_sound": false,
+                "tags": [],
+                "ad_type": 0,
+                "ad_url": "",
+                "edited": "0",
+                "in_gallery": false,
+                "deletehash": "HWl7S48dF4Y2Q3r",
+                "name": "",
+                "link": "https://i.imgur.com/RsWSMHF.png"
+            },
+            "success": true,
+            "status": 200
+        }
+        """
+    }
+}
+

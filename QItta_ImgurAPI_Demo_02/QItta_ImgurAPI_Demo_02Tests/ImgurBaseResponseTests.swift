@@ -23,4 +23,18 @@ class ImgurBaseResponseTests: XCTestCase {
         XCTAssertEqual(response.data.request, "/oauth2/token")
         XCTAssertEqual(response.data.method,  "POST")
     }
+    
+    func testDecodeImage() throws {
+        let jsonDecoder = JSONDecoder()
+        let data = ImgurBaseResponse<Image>.exampleJSON.data(using: .utf8)!
+        let response = try jsonDecoder.decode(ImgurBaseResponse<Image>.self, from: data)
+        XCTAssertEqual(response.success,            true)
+        XCTAssertEqual(response.status,             200)
+        XCTAssertEqual(response.data.id,            "RsWSMHF")
+        XCTAssertEqual(response.data.datetime,      1596455626)
+        XCTAssertEqual(response.data.animated,      false)
+        XCTAssertEqual(response.data.deletehash,    "HWl7S48dF4Y2Q3r")
+        XCTAssertEqual(response.data.link,          "https://i.imgur.com/RsWSMHF.png")
+        
+    }
 }

@@ -18,6 +18,7 @@
 		D0C0A12524D8448800E0D604 /* GenerateAccessTokenResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A12424D8448800E0D604 /* GenerateAccessTokenResponseTests.swift */; };
 		D0C0A12B24D8472100E0D604 /* ImgurAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A12A24D8472100E0D604 /* ImgurAPIError.swift */; };
 		D0C0A12D24D847A200E0D604 /* ImgurBaseResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A12C24D847A200E0D604 /* ImgurBaseResponseTests.swift */; };
+		D0C0A12F24D848F700E0D604 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A12E24D848F700E0D604 /* Image.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		D0C0A12424D8448800E0D604 /* GenerateAccessTokenResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateAccessTokenResponseTests.swift; sourceTree = "<group>"; };
 		D0C0A12A24D8472100E0D604 /* ImgurAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurAPIError.swift; sourceTree = "<group>"; };
 		D0C0A12C24D847A200E0D604 /* ImgurBaseResponseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurBaseResponseTests.swift; sourceTree = "<group>"; };
+		D0C0A12E24D848F700E0D604 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				D0C0A11E24D843BD00E0D604 /* ImgurBaseResponse.swift */,
 				D0C0A12024D843E700E0D604 /* GenerateAccessTokenResponse.swift */,
 				D0C0A12A24D8472100E0D604 /* ImgurAPIError.swift */,
+				D0C0A12E24D848F700E0D604 /* Image.swift */,
 				D0C0A10424D842F500E0D604 /* Assets.xcassets */,
 				D0C0A10624D842F500E0D604 /* Main.storyboard */,
 				D0C0A10924D842F500E0D604 /* Info.plist */,
@@ -215,6 +218,7 @@
 			files = (
 				D0C0A10324D842F000E0D604 /* ViewController.swift in Sources */,
 				D0C0A10124D842F000E0D604 /* AppDelegate.swift in Sources */,
+				D0C0A12F24D848F700E0D604 /* Image.swift in Sources */,
 				D0C0A12B24D8472100E0D604 /* ImgurAPIError.swift in Sources */,
 				D0C0A11F24D843BD00E0D604 /* ImgurBaseResponse.swift in Sources */,
 				D0C0A12124D843E700E0D604 /* GenerateAccessTokenResponse.swift in Sources */,
