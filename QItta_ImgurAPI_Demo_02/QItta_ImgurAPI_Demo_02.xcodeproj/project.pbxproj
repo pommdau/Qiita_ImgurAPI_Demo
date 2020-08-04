@@ -26,8 +26,8 @@
 		D0C0A13924D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13824D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift */; };
 		D0C0A13D24D865F800E0D604 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13C24D865F800E0D604 /* HTTPClient.swift */; };
 		D0C0A14024D8661700E0D604 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13F24D8661700E0D604 /* ImgurClient.swift */; };
-		D0C0A14324D8687500E0D604 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */; };
 		D0C0A14524D8706D00E0D604 /* ImgurClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A14424D8706D00E0D604 /* ImgurClientTests.swift */; };
+		D0C0A14624D8E63800E0D604 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +130,7 @@
 				D0C0A12C24D847A200E0D604 /* ImgurBaseResponseTests.swift */,
 				D0C0A12424D8448800E0D604 /* GenerateAccessTokenResponseTests.swift */,
 				D0C0A13824D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift */,
+				D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */,
 				D0C0A14424D8706D00E0D604 /* ImgurClientTests.swift */,
 			);
 			path = QItta_ImgurAPI_Demo_02Tests;
@@ -161,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				D0C0A13C24D865F800E0D604 /* HTTPClient.swift */,
-				D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */,
 				D0C0A13F24D8661700E0D604 /* ImgurClient.swift */,
 			);
 			path = Clients;
@@ -268,7 +268,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C0A10324D842F000E0D604 /* ViewController.swift in Sources */,
-				D0C0A14324D8687500E0D604 /* StubHTTPClient.swift in Sources */,
 				D0C0A13724D8593E00E0D604 /* ImgurAPI.swift in Sources */,
 				D0C0A13124D8573E00E0D604 /* ImgurClientError.swift in Sources */,
 				D0C0A13324D8582000E0D604 /* ImgurRequest.swift in Sources */,
@@ -292,6 +291,7 @@
 				D0C0A12324D8441E00E0D604 /* ExampleJSON.swift in Sources */,
 				D0C0A13924D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift in Sources */,
 				D0C0A12524D8448800E0D604 /* GenerateAccessTokenResponseTests.swift in Sources */,
+				D0C0A14624D8E63800E0D604 /* StubHTTPClient.swift in Sources */,
 				D0C0A11424D842F500E0D604 /* QItta_ImgurAPI_Demo_02Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
