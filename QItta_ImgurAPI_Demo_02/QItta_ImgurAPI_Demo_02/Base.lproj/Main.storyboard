@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="QItta_ImgurAPI_Demo_02" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Imgur API Demo" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -693,25 +694,182 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="vXd-wZ-le0" kind="relationship" relationship="window.shadowedContentViewController" id="4mt-6z-nCc"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Imgur API Demo-->
+        <scene sceneID="oRR-mn-tyE">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <viewController title="Imgur API Demo" id="vXd-wZ-le0" customClass="ViewController" customModule="ImgurAPIDemo_02" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="mbI-wb-YT5">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="324"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-VF-lhv">
+                                <rect key="frame" x="17" y="89" width="218" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sbq-VF-lhv" secondAttribute="height" multiplier="1:1" id="nsy-UZ-UkI"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="ep6-3N-qsL"/>
+                            </imageView>
+                            <progressIndicator hidden="YES" wantsLayer="YES" maxValue="100" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="JkI-j5-tLJ">
+                                <rect key="frame" x="118" y="190" width="16" height="16"/>
+                            </progressIndicator>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6N8-sU-U9L">
+                                <rect key="frame" x="234" y="276" width="167" height="32"/>
+                                <buttonCell key="cell" type="push" title="Authorize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kvJ-Ii-AvN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="authorizeButtonClicked:" target="vXd-wZ-le0" id="DIN-xA-X6k"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-sx-6yM">
+                                <rect key="frame" x="234" y="210" width="167" height="32"/>
+                                <buttonCell key="cell" type="push" title="Upload Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vZo-4q-OT8">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="uploadImageButtonClicked:" target="vXd-wZ-le0" id="nBJ-Bs-PRK"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xEl-gq-6eF">
+                                <rect key="frame" x="234" y="177" width="167" height="32"/>
+                                <buttonCell key="cell" type="push" title="Delete Image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wVf-gy-alB">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteImageButtonClicked:" target="vXd-wZ-le0" id="bD9-zJ-2p7"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Mer-Jb-Trn">
+                                <rect key="frame" x="234" y="243" width="167" height="32"/>
+                                <buttonCell key="cell" type="push" title="Update AccessToken" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6na-ft-fOu">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="updateAccessTokenButtonClicked:" target="vXd-wZ-le0" id="vPH-6l-3I7"/>
+                                </connections>
+                            </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Wn-lf-9T8">
+                                <rect key="frame" x="18" y="44" width="95" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Refresh Token:" id="ZSa-WA-xf5">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vAb-1A-BhO">
+                                <rect key="frame" x="39" y="20" width="74" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Image URL:" id="DkV-S8-WWT">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bSu-ne-g3c">
+                                <rect key="frame" x="22" y="68" width="91" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Access Token:" id="teQ-3e-vNj">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MZf-Aw-G6p">
+                                <rect key="frame" x="117" y="68" width="280" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" title="&lt;Access Token&gt;" id="BA7-Uh-2zI">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SO9-8L-8lI">
+                                <rect key="frame" x="117" y="44" width="280" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" title="&lt;Refresh Token&gt;" id="eEY-w6-K0l">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SyW-Ed-jqJ">
+                                <rect key="frame" x="117" y="20" width="280" height="16"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" selectable="YES" title="&lt;URL&gt;" id="6xX-NJ-3nM">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GcX-1D-2ua">
+                                <rect key="frame" x="234" y="144" width="167" height="32"/>
+                                <buttonCell key="cell" type="push" title="Reset OAuth Info" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="HR6-Pu-cE3">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteImageButtonClicked:" target="vXd-wZ-le0" id="udH-Ot-dfn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="vAb-1A-BhO" firstAttribute="leading" secondItem="mbI-wb-YT5" secondAttribute="leading" constant="41" id="0PR-Xv-Yje"/>
+                            <constraint firstItem="JkI-j5-tLJ" firstAttribute="centerX" secondItem="sbq-VF-lhv" secondAttribute="centerX" id="1MB-9V-bUN"/>
+                            <constraint firstItem="SO9-8L-8lI" firstAttribute="centerY" secondItem="4Wn-lf-9T8" secondAttribute="centerY" id="26G-z9-pde"/>
+                            <constraint firstItem="6N8-sU-U9L" firstAttribute="leading" secondItem="sbq-VF-lhv" secondAttribute="trailing" constant="8" id="2uR-53-5bg"/>
+                            <constraint firstItem="Mer-Jb-Trn" firstAttribute="leading" secondItem="sbq-VF-lhv" secondAttribute="trailing" constant="8" id="3oD-aA-qJg"/>
+                            <constraint firstItem="4Wn-lf-9T8" firstAttribute="leading" secondItem="mbI-wb-YT5" secondAttribute="leading" constant="20" id="4cB-51-BEl"/>
+                            <constraint firstItem="bSu-ne-g3c" firstAttribute="leading" secondItem="mbI-wb-YT5" secondAttribute="leading" constant="24" id="5KM-0B-Tlg"/>
+                            <constraint firstItem="SyW-Ed-jqJ" firstAttribute="centerY" secondItem="vAb-1A-BhO" secondAttribute="centerY" id="5Q2-Wo-YIT"/>
+                            <constraint firstItem="nMe-sx-6yM" firstAttribute="leading" secondItem="sbq-VF-lhv" secondAttribute="trailing" constant="8" id="696-q0-KVQ"/>
+                            <constraint firstItem="MZf-Aw-G6p" firstAttribute="leading" secondItem="bSu-ne-g3c" secondAttribute="trailing" constant="8" id="8x1-DA-maa"/>
+                            <constraint firstAttribute="bottom" secondItem="vAb-1A-BhO" secondAttribute="bottom" constant="20" id="B39-Rx-UJs"/>
+                            <constraint firstItem="xEl-gq-6eF" firstAttribute="leading" secondItem="sbq-VF-lhv" secondAttribute="trailing" constant="8" id="BnA-sr-nYV"/>
+                            <constraint firstItem="GcX-1D-2ua" firstAttribute="top" secondItem="xEl-gq-6eF" secondAttribute="bottom" constant="12" id="EJg-94-hrG"/>
+                            <constraint firstAttribute="trailing" secondItem="SO9-8L-8lI" secondAttribute="trailing" constant="20" id="GCs-WQ-eCV"/>
+                            <constraint firstItem="4Wn-lf-9T8" firstAttribute="top" secondItem="bSu-ne-g3c" secondAttribute="bottom" constant="8" id="J40-fR-zKy"/>
+                            <constraint firstItem="MZf-Aw-G6p" firstAttribute="centerY" secondItem="bSu-ne-g3c" secondAttribute="centerY" id="Q9G-IG-rHA"/>
+                            <constraint firstItem="xEl-gq-6eF" firstAttribute="top" secondItem="nMe-sx-6yM" secondAttribute="bottom" constant="12" id="QSX-Ft-eiH"/>
+                            <constraint firstItem="Mer-Jb-Trn" firstAttribute="top" secondItem="6N8-sU-U9L" secondAttribute="bottom" constant="12" id="RXN-OY-xAn"/>
+                            <constraint firstItem="SyW-Ed-jqJ" firstAttribute="leading" secondItem="vAb-1A-BhO" secondAttribute="trailing" constant="8" id="Ta0-o1-YZe"/>
+                            <constraint firstItem="bSu-ne-g3c" firstAttribute="top" secondItem="sbq-VF-lhv" secondAttribute="bottom" constant="8" id="aS8-k7-055"/>
+                            <constraint firstItem="sbq-VF-lhv" firstAttribute="top" secondItem="mbI-wb-YT5" secondAttribute="top" constant="20" id="bLU-BW-bw6"/>
+                            <constraint firstItem="SO9-8L-8lI" firstAttribute="leading" secondItem="4Wn-lf-9T8" secondAttribute="trailing" constant="8" id="ccb-Ve-JG0"/>
+                            <constraint firstAttribute="trailing" secondItem="SyW-Ed-jqJ" secondAttribute="trailing" constant="20" id="dZJ-Im-eec"/>
+                            <constraint firstItem="sbq-VF-lhv" firstAttribute="leading" secondItem="mbI-wb-YT5" secondAttribute="leading" constant="20" id="deo-Zg-XBv"/>
+                            <constraint firstAttribute="trailing" secondItem="Mer-Jb-Trn" secondAttribute="trailing" constant="20" id="fEl-tr-Mea"/>
+                            <constraint firstItem="vAb-1A-BhO" firstAttribute="top" secondItem="4Wn-lf-9T8" secondAttribute="bottom" constant="8" id="gJX-zJ-hLh"/>
+                            <constraint firstAttribute="trailing" secondItem="GcX-1D-2ua" secondAttribute="trailing" constant="20" id="hqZ-u7-EOP"/>
+                            <constraint firstItem="JkI-j5-tLJ" firstAttribute="centerY" secondItem="sbq-VF-lhv" secondAttribute="centerY" id="mVE-LH-x2L"/>
+                            <constraint firstAttribute="trailing" secondItem="nMe-sx-6yM" secondAttribute="trailing" constant="20" id="n6e-hG-cTp"/>
+                            <constraint firstItem="6N8-sU-U9L" firstAttribute="top" secondItem="mbI-wb-YT5" secondAttribute="top" constant="20" id="n7a-qW-Gph"/>
+                            <constraint firstAttribute="trailing" secondItem="xEl-gq-6eF" secondAttribute="trailing" constant="20" id="oNr-Pe-gHS"/>
+                            <constraint firstAttribute="trailing" secondItem="6N8-sU-U9L" secondAttribute="trailing" constant="20" id="rHa-SY-tAu"/>
+                            <constraint firstItem="GcX-1D-2ua" firstAttribute="leading" secondItem="sbq-VF-lhv" secondAttribute="trailing" constant="8" id="t3W-F2-W0Z"/>
+                            <constraint firstItem="nMe-sx-6yM" firstAttribute="top" secondItem="Mer-Jb-Trn" secondAttribute="bottom" constant="12" id="uCt-1g-k2o"/>
+                            <constraint firstAttribute="trailing" secondItem="MZf-Aw-G6p" secondAttribute="trailing" constant="20" id="zgM-WT-J40"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessTokenLabel" destination="MZf-Aw-G6p" id="TK6-wH-kOA"/>
+                        <outlet property="deletingImageButton" destination="xEl-gq-6eF" id="pSk-Ie-2At"/>
+                        <outlet property="imageURLLabel" destination="SyW-Ed-jqJ" id="bQh-X9-CJP"/>
+                        <outlet property="imageView" destination="sbq-VF-lhv" id="N5g-Ni-wwm"/>
+                        <outlet property="progressIndicator" destination="JkI-j5-tLJ" id="JCa-4b-eOk"/>
+                        <outlet property="refreshTokenLabel" destination="SO9-8L-8lI" id="obx-8e-LHa"/>
+                        <outlet property="resettingOAuthInfoButton" destination="GcX-1D-2ua" id="5fx-Dl-KyX"/>
+                        <outlet property="uploadingImageButton" destination="nMe-sx-6yM" id="cMT-ZX-KFs"/>
+                    </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="4eV-tq-i15" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="76" y="712"/>
         </scene>
     </scenes>
 </document>
