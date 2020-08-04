@@ -814,7 +814,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="deleteImageButtonClicked:" target="vXd-wZ-le0" id="udH-Ot-dfn"/>
+                                    <action selector="resetOAuthInfoButtonClicked:" target="vXd-wZ-le0" id="Ccn-WW-VWj"/>
                                 </connections>
                             </button>
                         </subviews>

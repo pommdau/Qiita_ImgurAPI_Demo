@@ -164,8 +164,8 @@ public final class ImgurAPI {
             case accountID
         }
         
-        static let clientID = "e6d8ea34904ab93"
-        static let clientSecret = "fcbd5690a9ae357f927d31b1f0918b12ec3af24c"
+        static let clientID = "2cdc3a06e7197c2"
+        static let clientSecret = "75d1bd587d6d42283421655591ac7b824054661d"
         static let callBackNotificationName = Notification.Name("ReceiveCallBackURLNotification")
         struct UserinfoKey {
             static let callbackURL = "callbackurl"
