@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import QItta_ImgurAPI_Demo_02
 
 class StubHTTPClient : HTTPClient {
     // stubとして返す用のResultオブジェクト（実際には、このプロパティは値を指定されて使用される）
