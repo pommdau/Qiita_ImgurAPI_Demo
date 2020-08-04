@@ -27,6 +27,7 @@
 		D0C0A13D24D865F800E0D604 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13C24D865F800E0D604 /* HTTPClient.swift */; };
 		D0C0A14024D8661700E0D604 /* ImgurClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A13F24D8661700E0D604 /* ImgurClient.swift */; };
 		D0C0A14324D8687500E0D604 /* StubHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */; };
+		D0C0A14524D8706D00E0D604 /* ImgurClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C0A14424D8706D00E0D604 /* ImgurClientTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D0C0A13C24D865F800E0D604 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		D0C0A13F24D8661700E0D604 /* ImgurClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurClient.swift; sourceTree = "<group>"; };
 		D0C0A14124D8687200E0D604 /* StubHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubHTTPClient.swift; sourceTree = "<group>"; };
+		D0C0A14424D8706D00E0D604 /* ImgurClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurClientTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				D0C0A12C24D847A200E0D604 /* ImgurBaseResponseTests.swift */,
 				D0C0A12424D8448800E0D604 /* GenerateAccessTokenResponseTests.swift */,
 				D0C0A13824D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift */,
+				D0C0A14424D8706D00E0D604 /* ImgurClientTests.swift */,
 			);
 			path = QItta_ImgurAPI_Demo_02Tests;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C0A12D24D847A200E0D604 /* ImgurBaseResponseTests.swift in Sources */,
+				D0C0A14524D8706D00E0D604 /* ImgurClientTests.swift in Sources */,
 				D0C0A12324D8441E00E0D604 /* ExampleJSON.swift in Sources */,
 				D0C0A13924D8620C00E0D604 /* ImgurAPIErrorResponseTests.swift in Sources */,
 				D0C0A12524D8448800E0D604 /* GenerateAccessTokenResponseTests.swift in Sources */,

@@ -9,6 +9,7 @@
 import Foundation
 
 class StubHTTPClient : HTTPClient {
+    // stubとして返す用のResultオブジェクト（実際には、このプロパティは値を指定されて使用される）
     var result: Result<(Data, HTTPURLResponse), Error> =
         .success(
             (Data(),

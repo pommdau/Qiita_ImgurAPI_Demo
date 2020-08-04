@@ -45,7 +45,7 @@ public class ImgurClient {
         }
     }
     
-    // MARK:- OAuth2.0初回認証用
+    // MARK:- OAuth2.0初回認証用（URLRequestが関係なく特殊なのでクラス分けの余地はあるかも）
     
     public func openAuthorizePageInBrowser<Request : ImgurRequest>(request: Request) {
         let urlRequest = request.buildURLRequest()
